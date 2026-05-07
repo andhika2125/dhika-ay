@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Mewarnai Digital</title>
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================== */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+      line-height:1.6;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+    header{
+      background:linear-gradient(135deg,#ff7b00,#ff0066);
+      color:white;
+      padding:20px 10%;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .hero{
+      padding:90px 0;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:55px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 32px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:white;
+      color:#ff0066;
+    }
+
+    .btn-primary:hover{
+      background:#ffe5ef;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:50px;
+      color:#ff0066;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .about h3{
+      margin-bottom:15px;
+      color:#ff0066;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#ff0066;
+      font-size:24px;
+      font-weight:bold;
+      margin:15px 0;
+    }
+
+    .buy-btn{
+      display:inline-block;
+      background:#ff0066;
+      color:white;
+      padding:12px 20px;
+      border-radius:10px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .buy-btn:hover{
+      background:#d80057;
+    }
+
+    /* =========================
+       PAYMENT
+    ========================== */
+    .payment-box{
+      max-width:600px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .payment-box p{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    input{
+      width:100%;
+      padding:15px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:16px;
+    }
+
+    button{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background:#ff0066;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#d80057;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        Buku Mewarnai Digital
+      </div>
+
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+
+    </nav>
+
+    <div class="hero">
+
+      <h1>
+        Bisnis Digital Kreatif & Modern
+      </h1>
+
+      <p>
+        Jual buku mewarnai digital berkualitas tinggi
+        untuk anak-anak dan dewasa.
+        Produk siap download dan mudah dijual online.
+      </p>
+
+      <a href="#produk" class="btn btn-primary">
+        Lihat Produk
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+  <section id="tentang">
+
+    <h2 class="section-title">
+      Pengenalan Bisnis Digital
+    </h2>
+
+    <div class="about">
+
+      <div>
+
+        <h3>
+          Apa itu Buku Mewarnai Digital?
+        </h3>
+
+        <p>
+          Buku mewarnai digital adalah produk digital
+          yang dapat diunduh dan dicetak kapan saja.
+          Cocok untuk anak-anak, edukasi, terapi relaksasi,
+          dan hiburan kreatif.
+        </p>
+
+        <br>
+
+        <h3>
+          Keuntungan Bisnis Digital
+        </h3>
+
+        <p>
+          Tidak membutuhkan stok barang,
+          pengiriman otomatis,
+          biaya produksi rendah,
+          dan dapat dijual berkali-kali.
+        </p>
+
+      </div>
+
+      <div>
+
+        <img
+          src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop"
+          alt="Bisnis Digital">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       PRODUCTS
+  ========================== -->
+  <section id="produk">
+
+    <h2 class="section-title">
+      Produk Digital
+    </h2>
+
+    <div class="products">
+
+      <!-- PRODUCT 1 -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop"
+          alt="Buku Anak">
+
+        <div class="card-content">
+
+          <h3>
+            Buku Mewarnai Anak
+          </h3>
+
+          <p>
+            50 halaman gambar lucu dan edukatif.
+          </p>
+
+          <div class="price">
+            Rp49.000
+          </div>
+
+          <a href="#download" class="buy-btn">
+            Beli Sekarang
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop"
+          alt="Mandala">
+
+        <div class="card-content">
+
+          <h3>
+            Buku Mewarnai Mandala
+          </h3>
+
+          <p>
+            Desain relaksasi premium untuk dewasa.
+          </p>
+
+          <div class="price">
+            Rp79.000
+          </div>
+
+          <a href="#download" class="buy-btn">
+            Beli Sekarang
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+          alt="PLR">
+
+        <div class="card-content">
+
+          <h3>
+            Paket Bisnis PLR
+          </h3>
+
+          <p>
+            100+ template siap jual ulang.
+          </p>
+
+          <div class="price">
+            Rp149.000
+          </div>
+
+          <a href="#download" class="buy-btn">
+            Beli Sekarang
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       PAYMENT & DOWNLOAD
+  ========================== -->
+  <section id="download">
+
+    <h2 class="section-title">
+      Pembayaran & Download
+    </h2>
+
+    <div class="payment-box">
+
+      <p>
+        Isi data dan lakukan pembayaran
+        untuk mendapatkan akses download produk digital.
+      </p>
+
+      <form onsubmit="downloadProduct(event)">
+
+        <input
+          type="text"
+          placeholder="Nama Lengkap"
+          required>
+
+        <input
+          type="email"
+          placeholder="Email"
+          required>
+
+        <input
+          type="text"
+          placeholder="Metode Pembayaran (QRIS / Transfer)"
+          required>
+
+        <button type="submit">
+          Bayar & Download
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer>
+
+    <p>
+      © 2026 Buku Mewarnai Digital
+      | Semua Hak Dilindungi
+    </p>
+
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+  <script>
+
+    function downloadProduct(event){
+
+      event.preventDefault();
+
+      alert(
+        "Pembayaran berhasil! Produk akan diunduh."
+      );
+
+      // simulasi download file
+      const link = document.createElement("a");
+
+      link.href = "#";
+
+      link.download = "buku-mewarnai-digital.pdf";
+
+      link.click();
+    }
+
+  </script>
+
+</body>
+</html>
